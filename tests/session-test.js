@@ -3,6 +3,8 @@ import session from './session';
 
 session((err, user, api, credentials) => {
   test('Authorized session should be preserved during multiple requests', t => {
+    t.error(err, 'Session: user should be created successfully');
+
     api.account.get().then(userFromAccount => {
       t.notOk(userFromAccount.isGuest, 'User should not be guest');
       t.equal(userFromAccount.email, credentials.email.toLowerCase(), 'User has email');
