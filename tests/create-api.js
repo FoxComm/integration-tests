@@ -1,8 +1,8 @@
-import Api from '../../api-js/src';
+import Api from '@foxcomm/api-js';
 import supertest from 'supertest';
 
 export default function createApi(options = {}) {
-  const apiBaseUrl = 'https://test-perfectgourmet.foxcommerce.com';
+  const apiBaseUrl = process.env.API_URL;
   let agent = supertest(apiBaseUrl);
 
   if (options.preserveCookies) {
