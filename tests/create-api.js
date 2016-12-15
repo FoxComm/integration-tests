@@ -1,19 +1,16 @@
 import Api from '../../api-js/src';
 import supertest from 'supertest';
-import superagent from 'superagent';
 
-export default function createApi(options) {
+export default function createApi(options = {}) {
   const apiBaseUrl = 'https://test-perfectgourmet.foxcommerce.com';
-  let apiUrl = `${apiBaseUrl}/api`;
-  let agent = superagent;
+  let agent = supertest(apiBaseUrl);
 
   if (options.preserveCookies) {
     agent = supertest.agent(apiBaseUrl);
-    apiUrl = '/api';
   }
 
   return new Api({
-    api_url: apiUrl,
+    api_url: '/api',
     stripe_key: 'pk_test_JvTXpI3DrkV6QwdcmZarmlfk',
     agent,
   });

@@ -2,7 +2,7 @@ import test from 'tape';
 import faker from 'faker';
 import createApi from './create-api';
 
-const api = createApi({ preserveCookie: true });
+const api = createApi();
 
 test('User should be created successfully', t => {
   const email = faker.internet.email();
@@ -14,5 +14,5 @@ test('User should be created successfully', t => {
     t.equal(user.name, name, 'User has name');
     t.notOk(user.isGuest, 'User is not guest');
     t.end();
-  });
+  }).catch(err => console.log('error:', err));
 });
