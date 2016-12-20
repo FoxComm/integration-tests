@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "babel-tape-runner tests/**/*-test.js | tap-spec"
+    "test": "babel-tape-runner tests/**/*-test.js | tap-spec",
+    "test-one": "babel-tape-runner "
   },
   "repository": {
     "type": "git",
@@ -15,16 +16,28 @@
     "url": "https://github.com/FoxComm/integration-tests/issues"
   },
   "homepage": "https://github.com/FoxComm/integration-tests#readme",
+  "dependencies": {
+    "@foxcomm/api-js": "^1.1.0",
+    "faker": "^3.1.0",
+    "lodash": "^4.17.2",
+    "supertest": "^2.0.1",
+    "tap": "^8.0.1",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.3",
+    "tape-async": "^2.1.1",
+    "tape-catch": "^1.0.6"
+  },
   "devDependencies": {
     "babel-core": "^6.9.1",
-    "babel-eslint": "^4.1.8",
+    "babel-eslint": "^7.1.1",
     "babel-plugin-react-transform": "^2.0.0",
+    "babel-plugin-transform-async-to-generator": "^6.16.0",
     "babel-plugin-transform-class-properties": "^6.9.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-runtime": "^6.9.0",
     "babel-plugin-typecheck": "github:anru/babel-plugin-typecheck#dont-throw-2",
     "babel-polyfill": "^6.9.1",
-    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.9.0",
@@ -32,17 +45,13 @@
     "babel-tape-runner": "^2.0.1",
     "babel-traverse": "^6.9.0",
     "blue-tape": "^1.0.0",
-    "eslint": "^1.10.3",
-    "eslint-config-airbnb": "^5.0.0",
-    "eslint-plugin-flow-vars": "^0.1.3",
-    "eslint-plugin-no-console-log": "^1.0.0",
-    "eslint-plugin-react": "^3.16.1",
-    "faker": "^3.1.0",
-    "faucet": "^0.0.1",
-    "supertest": "^2.0.1",
-    "tap-spec": "^4.1.1",
-    "tape": "^4.6.3",
-    "tape-catch": "^1.0.6",
-    "@foxcomm/api-js": "^1.1.0"
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-flow-vars": "^0.5.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-no-console-log": "^2.0.0",
+    "eslint-plugin-react": "^6.8.0",
+    "faucet": "^0.0.1"
   }
 }

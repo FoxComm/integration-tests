@@ -7,10 +7,16 @@ export default function session (cb) {
   const name = faker.name.firstName();
   const password = faker.internet.password();
 
+  // console.log('Creating new user: %s/%s, %s', name, email, password);
+
   return api.auth
     .signup(email, name, password)
-    .then(({ user }) => {
-      cb(null, user, api, { email, name, password });
+    .then((credentials) => {
+      cb(null, credentials, api, { email, name, password });
+      // console.log('User created');
     })
-    .catch(err => cb(err));
+    .catch(err => {
+      console.log('User creation error:', err);
+      cb(err);
+    });
 }

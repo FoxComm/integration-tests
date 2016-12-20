@@ -1,6 +1,6 @@
 import test from 'tape';
 import faker from 'faker';
-import createApi from './create-api';
+import createApi from './tools/create-api';
 
 const api = createApi();
 
